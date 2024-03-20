@@ -4,12 +4,14 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { CommonModule } from "@angular/common";
 import { FormatAdressPipe } from "../pipes/endereco.pipe";
 import { StatusTransformPipe } from "../pipes/status.pipe";
+import { DateTransformPipe } from "../pipes/date.pipe";
 
 @NgModule({
   declarations: [
     UserDetailsComponent,
     FormatAdressPipe,
-    StatusTransformPipe
+    StatusTransformPipe,
+    DateTransformPipe
   ],
   imports: [
     AngularMaterialModule,
@@ -18,7 +20,8 @@ import { StatusTransformPipe } from "../pipes/status.pipe";
   exports: [
     UserDetailsComponent,
     FormatAdressPipe,
-    StatusTransformPipe
+    StatusTransformPipe,
+    DateTransformPipe
   ],
 })
 export class ComponentsModule {
