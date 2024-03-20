@@ -3,11 +3,13 @@ import { AngularMaterialModule } from "../angular-material/angular-material.modu
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { CommonModule } from "@angular/common";
 import { FormatAdressPipe } from "../pipes/endereco.pipe";
+import { StatusTransformPipe } from "../pipes/status.pipe";
 
 @NgModule({
   declarations: [
     UserDetailsComponent,
-    FormatAdressPipe
+    FormatAdressPipe,
+    StatusTransformPipe
   ],
   imports: [
     AngularMaterialModule,
@@ -15,7 +17,8 @@ import { FormatAdressPipe } from "../pipes/endereco.pipe";
   ],
   exports: [
     UserDetailsComponent,
-    FormatAdressPipe
+    FormatAdressPipe,
+    StatusTransformPipe
   ],
 })
 export class ComponentsModule {
