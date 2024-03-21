@@ -11,6 +11,7 @@ import { FormatAdressPipe } from "../pipes/endereco.pipe";
 import { StatusTransformPipe } from "../pipes/status.pipe";
 import { DateTransformPipe } from "../pipes/date.pipe";
 import { UsersListComponent } from './users-list/users-list.component';
+import { PhoneTransformPipe } from "../pipes/phone.pipe";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UsersListComponent } from './users-list/users-list.component';
     FormatAdressPipe,
     StatusTransformPipe,
     DateTransformPipe,
+    PhoneTransformPipe,
     FilterComponent,
     UsersListComponent
   ],
@@ -31,6 +33,7 @@ import { UsersListComponent } from './users-list/users-list.component';
     FormatAdressPipe,
     StatusTransformPipe,
     DateTransformPipe,
+    PhoneTransformPipe,
     FilterComponent,
     UsersListComponent
   ],
