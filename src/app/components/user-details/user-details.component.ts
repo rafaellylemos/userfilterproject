@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { UsersList } from '../../data/users-list';
+import { Component, Input } from '@angular/core';
+import { IUser } from '../../interfaces/user/user.interface';
 
 @Component({
   selector: 'app-user-details',
@@ -7,7 +7,9 @@ import { UsersList } from '../../data/users-list';
   styleUrl: './user-details.component.scss'
 })
 export class UserDetailsComponent {
-  usersList = UsersList;
+
+  @Input({ required: true }) user:IUser = {} as IUser;
+//Casting = coloquei o "as" para indicar que o objeto vazio é do tipo IUser, se não, eu iria tomar um erro de tipagem TS
 
   formatarTelefone(telefone: string): string {
 
