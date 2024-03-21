@@ -7,21 +7,17 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   /* Organiza as Divs filhas verticalmente */
 }
 .top-div {
   flex-grow: 1;
-  border: 1px solid red;
   /* Preenche todo o espaço disponivel */
 }
 .main-left-div {
   height: 80%;
-  border: 1px solid green;
   /* Ocupa 80% da altura do seu container pai */
 }
 .right-div {
   width: 30%;
   max-height: 100vh;
-  border: 1px solid blue;
 }

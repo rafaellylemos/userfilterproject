@@ -18,8 +18,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ComponentsModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }

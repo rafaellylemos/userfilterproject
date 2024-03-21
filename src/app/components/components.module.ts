@@ -10,6 +10,7 @@ import { FilterComponent } from './filter/filter.component';
 import { FormatAdressPipe } from "../pipes/endereco.pipe";
 import { StatusTransformPipe } from "../pipes/status.pipe";
 import { DateTransformPipe } from "../pipes/date.pipe";
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DateTransformPipe } from "../pipes/date.pipe";
     FormatAdressPipe,
     StatusTransformPipe,
     DateTransformPipe,
-    FilterComponent
+    FilterComponent,
+    UsersListComponent
   ],
   imports: [
     AngularMaterialModule,
@@ -29,7 +31,8 @@ import { DateTransformPipe } from "../pipes/date.pipe";
     FormatAdressPipe,
     StatusTransformPipe,
     DateTransformPipe,
-    FilterComponent
+    FilterComponent,
+    UsersListComponent
   ],
 })
 export class ComponentsModule {

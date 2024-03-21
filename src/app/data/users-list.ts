@@ -106,11 +106,11 @@ export const UsersList: IUser[] = [
               pais: "Brasil",
               },
             telefone: "11997654556",
-            ativo: true,
+            ativo: false,
             funcao: "Desenvolvedor(a) Frontend",
             dataCadastro: "2023-08-01T09:00:00.000Z",
             status: {
-              online:true,
+              online:false,
               verificado: true,
               assinaturaAtiva: true,
               ultimoAcesso: "2023-08-02T09:00:00:000Z"
