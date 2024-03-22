@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-import { DateTransformPipe } from "./date.pipe";
 import { FormatAdressPipe } from "./endereco.pipe";
 import { PhoneTransformPipe } from "./phone.pipe";
 import { StatusTransformPipe } from "./status.pipe";
@@ -8,13 +7,11 @@ import { StatusTransformPipe } from "./status.pipe";
   declarations: [ 
     FormatAdressPipe,
     StatusTransformPipe,
-    DateTransformPipe,
     PhoneTransformPipe,
     ],
   exports: [ 
     FormatAdressPipe,
     StatusTransformPipe,
-    DateTransformPipe,
     PhoneTransformPipe]
 })
 export class PipesModule {

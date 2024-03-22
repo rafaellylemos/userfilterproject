@@ -25,7 +25,7 @@
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Ativo: </span>
+      <span class="mat-h2">Status: </span>
       <span class="mat-h3">{{ user.ativo | statusTransform }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
@@ -36,7 +36,7 @@
     <mat-divider></mat-divider>
     <mat-list-item>
       <span class="mat-h2">Data de cadastro: </span>
-      <span class="mat-h3">{{ user.dataCadastro | dateTransform }}</span>
+      <span class="mat-h3">{{ user.dataCadastro | date:'dd/MM/yyyy' }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
