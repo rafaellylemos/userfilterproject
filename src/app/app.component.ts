@@ -9,4 +9,8 @@ import { UsersList } from './data/users-list';
 })
 export class AppComponent {
   userSelected: IUser = UsersList[0];
+
+  onUserSelected(user: IUser) {
+    this.userSelected = user;
+  }
 }

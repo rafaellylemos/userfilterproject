@@ -22,7 +22,7 @@
         class="users-list__item"
         (click)="onUserSelected(element)"
       >
-        {{ element.dataCadastro | date:'dd/MM/yyyy' | dashIfEmpty }}
+        {{ element.dataCadastro | date : "dd/MM/yyyy" | dashIfEmpty }}
       </td>
     </ng-container>
 
