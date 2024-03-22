@@ -1,13 +1,17 @@
 <div class="container">
   <div class="left-container">
     <div class="top-div">
-      <app-filter />
+      <app-filter (onFilter)="onFilter($event)" />
     </div>
     <div class="main-left-div">
-      <app-users-list [usersList]="usersList" (userSelected)="onUserSelected($event)"/>
+      <app-users-list
+        [usersList]="userListFiltered"
+        (userSelected)="onUserSelected($event)"
+      />
+      <!-- Aqui, a gente chamou a lista filtrada através do userListFiltered, mas lá no app.component.ts a gente organizou para que aparecesse inicialmente, a lista completa. -->
     </div>
   </div>
   <div class="right-div">
-      <app-user-details [user]="userSelected" *ngIf="showUserDetails"/>
+    <app-user-details [user]="userSelected" *ngIf="showUserDetails" />
   </div>
 </div>
