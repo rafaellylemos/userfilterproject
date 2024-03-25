@@ -35,7 +35,12 @@ export class AppComponent implements OnInit {
   filterUserList(filterOptions: IFilterOptions, usersList: IUser[]): IUser[] {
     let filteredList: IUser[] = [];
 
+
+  //filterUserList é um método que foi criado por mim para executar a lógica de filtro e retornar a lista filtrada. Acima, eu estou declarando esse método.
+
     filteredList = this.filterUserListByName(filterOptions.name, usersList);
+
+    filteredList = this.filterUserListByStatus(filterOptions.status, filteredList);
 
     return filteredList;
   }
@@ -48,6 +53,18 @@ export class AppComponent implements OnInit {
 
     const filteredList = usersList.filter((user) => user.nome.toLowerCase().includes(name.toLowerCase()))
 
+    return filteredList;
+  }
+
+  filterUserListByStatus(status: boolean | undefined, usersList: IUser[]): IUser[] {
+    const STATUS_NOT_SELECTED = status === undefined;
+
+    if(STATUS_NOT_SELECTED) {
+      return usersList;
+    }
+
+    const filteredList = usersList.filter((user) => user.ativo === status)
+    
     return filteredList;
   }
 }
