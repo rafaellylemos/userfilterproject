@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from './interfaces/user/user.interface';
 import { UsersList } from './data/users-list';
 import { IFilterOptions } from './interfaces/filter-options.interface';
+import { isWithinInterval } from 'date-fns';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,7 @@ import { IFilterOptions } from './interfaces/filter-options.interface';
 export class AppComponent implements OnInit {
 
   usersList: IUser[] = [];
-
   userListFiltered: IUser[] = [];
-
   showUserDetails:boolean = false;
 
   ngOnInit(){
@@ -35,15 +34,17 @@ export class AppComponent implements OnInit {
   filterUserList(filterOptions: IFilterOptions, usersList: IUser[]): IUser[] {
     let filteredList: IUser[] = [];
 
-
   //filterUserList é um método que foi criado por mim para executar a lógica de filtro e retornar a lista filtrada. Acima, eu estou declarando esse método.
 
     filteredList = this.filterUserListByName(filterOptions.name, usersList);
 
     filteredList = this.filterUserListByStatus(filterOptions.status, filteredList);
 
+    filteredList = this.filterUserListByData(filterOptions.startDate, filterOptions.endDate, filteredList);
+
     return filteredList;
-  }
+  } //função de filtro base que irá chamar todas as outras
+
   filterUserListByName(name: string | undefined, usersList: IUser[]): IUser[] {
     const NAME_NOT_TYPED = name === undefined;
 
@@ -67,4 +68,23 @@ export class AppComponent implements OnInit {
     
     return filteredList;
   }
+
+  filterUserListByData(startDate: Date | undefined, endDate: Date | undefined, usersList: IUser[]): IUser[] {
+    const DATES_NOT_SELECTED = startDate === undefined || endDate === undefined;
+
+    if(DATES_NOT_SELECTED) {
+      return usersList;
+      // esse usersList é o que o método recebe de parâmetro. Isso vale para todos os métodos anteriores.
+    }
+
+    const checkDateInterval = (user: IUser) => isWithinInterval(new Date(user.dataCadastro), {
+      start: startDate,
+      end: endDate,
+    });
+
+    const listFiltered = usersList.filter(checkDateInterval);
+
+    return listFiltered;
+  }
+  
 }
