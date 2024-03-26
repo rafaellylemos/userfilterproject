@@ -5,7 +5,7 @@
     </div>
     <div class="main-left-div">
       <app-users-list
-        [usersList]="userListFiltered"
+        [usersList]="usersListFiltered"
         (userSelected)="onUserSelected($event)"
       />
       <!-- Aqui, a gente chamou a lista filtrada através do userListFiltered, mas lá no app.component.ts a gente organizou para que aparecesse inicialmente, a lista completa. -->
